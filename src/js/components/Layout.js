@@ -27,13 +27,13 @@ export default class Layout extends React.Component {
     render() {
         const {user, tweets} = this.props;
 
-        if (!tweets.length) {
+        if (!tweets.data) {
             return <button onClick={() => this.props.actions.fetchTweets()}>load tweets</button>
         }
 
         return <div>
             <h1>{user.name}</h1>
-            <ul>{tweets.map(tweet => <li key={tweet.id}>{tweet.text}</li>)}</ul>
+            <ul>{tweets.data.map(tweet => <li key={tweet.id}>{tweet.text}</li>)}</ul>
         </div>
     }
 }
