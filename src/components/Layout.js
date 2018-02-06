@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch) => {
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Layout extends React.Component {
+
     componentWillMount() {
         this.props.actions.fetchUser();
     }
