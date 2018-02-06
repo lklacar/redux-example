@@ -4,6 +4,7 @@ import {connect} from "react-redux"
 import {fetchUser} from "../actions/userActions"
 import {fetchTweets} from "../actions/tweetsActions"
 import {bindActionCreators} from "redux";
+import Tweets from "./Tweets";
 
 
 const mapStateToProps = (store) => {
@@ -34,7 +35,7 @@ export default class Layout extends React.Component {
 
         return <div>
             <h1>{user.name}</h1>
-            <ul>{tweets.data.map(tweet => <li key={tweet.id}>{tweet.text}</li>)}</ul>
+            <Tweets tweets={tweets} />F
         </div>
     }
 }
